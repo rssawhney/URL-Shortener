@@ -16,12 +16,16 @@ con.connect(function(err){
     console.log('Connection established');
 });
 
-con.query('SELECT * FROM employees',function(err,rows){
-    if(err) throw err;
+con.query(
+    'UPDATE employees SET location = ? Where ID = ?',
+    ["South Africa", 5],
+    function (err, result) {
+        if (err) throw err;
 
-    console.log('Data received from Db:\n');
-    console.log(rows);
-});
+        console.log('Changed ' + result.changedRows + ' rows');
+    }
+);
+
 con.end(function(err) {
     // The connection is terminated gracefully
     // Ensures all previously enqueued queries are still

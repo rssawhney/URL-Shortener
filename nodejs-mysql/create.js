@@ -16,12 +16,13 @@ con.connect(function(err){
     console.log('Connection established');
 });
 
-con.query('SELECT * FROM employees',function(err,rows){
+var employee = { name: 'Winnie', location: 'Australia' };
+con.query('INSERT INTO employees SET ?', employee, function(err,res){
     if(err) throw err;
 
-    console.log('Data received from Db:\n');
-    console.log(rows);
+    console.log('Last insert ID:', res.insertId);
 });
+
 con.end(function(err) {
     // The connection is terminated gracefully
     // Ensures all previously enqueued queries are still
