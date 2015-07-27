@@ -17,6 +17,7 @@
     "express": "^4.13.1",
     "hiredis": "^0.4.0",
     "jade": "^1.11.0",
+    "mysql": "^2.8.0",
     "redis": "^0.12.1",
     "shortid": "^2.2.2"
   },
@@ -27,6 +28,8 @@
     "grunt-mocha-istanbul": "^2.4.0",
     "istanbul": "^0.3.17",
     "mocha": "^2.2.5",
-    "request": "^2.60.0"
+    "request": "^2.60.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-execute": "^0.2.2"
   }
 }
